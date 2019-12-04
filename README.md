@@ -1,10 +1,10 @@
 # GroupDocs.Editor Cloud SDK for PHP
-This repository contains GroupDocs.Editor Cloud SDK for PHP source code. This SDK allows you to work with GroupDocs.Editor Cloud REST APIs in your PHP applications.
+This repository contains GroupDocs.Editor Cloud SDK for PHP source code. This SDK allows you to work with GroupDocs.Editor Cloud REST APIs in your PHP applications. 
 
 GroupDocs.Editor Cloud allows you to edit documents across wide range of supported document types:
    * Microsoft Word documents - DOC, DOCX, DOCM, DOT, DOTM, DOTX, RTF, FlatOpc, WordML, TXT;
    * Microsoft Excel spreadsheets - XLS, XLSX, XLSM, XLT, XLTX, XLTM, XLSB, SpreadsheetML, CSV, TSV;
-   * Microsoft PowerPoint presentations - PPT, PPTX, PPTM, POT, PPS etc.;
+   * Microsoft PowerPoint presentations - PPT, PPTX, PPTM, POT, PPS, PPSX etc.;
    * Open Document formats - ODT, OTT, ODS, ODP, OTP;
    * Markup - HTML, MHTML, XML.
 ## Dependencies
