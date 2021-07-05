@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd" file="EditApi.php">
- *   Copyright (c) 2003-2019 Aspose Pty Ltd
+ *   Copyright (c) 2003-2021 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -130,9 +130,9 @@ class EditApi
                 $error = json_decode($content);
 
                 $errorCode = $e->getCode();
-                $errorMessage = $error->error != null && $error->error->message != null
-                    ? $error->error->message
-                    : $e->getMessage();
+                $errorMessage = $error != null && $error->message != null
+                    ? $error->message
+                    : ($error != null && $error->error != null && $error->error->message != null ? $error->error->message : $e->getMessage());
                 
                 throw new ApiException($errorMessage, $errorCode);
             }
@@ -400,9 +400,9 @@ class EditApi
                 $error = json_decode($content);
 
                 $errorCode = $e->getCode();
-                $errorMessage = $error->error != null && $error->error->message != null
-                    ? $error->error->message
-                    : $e->getMessage();
+                $errorMessage = $error != null && $error->message != null
+                    ? $error->message
+                    : ($error != null && $error->error != null && $error->error->message != null ? $error->error->message : $e->getMessage());
                 
                 throw new ApiException($errorMessage, $errorCode);
             }
@@ -729,7 +729,7 @@ class EditApi
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd" file="loadRequest.php">
- *   Copyright (c) 2003-2019 Aspose Pty Ltd
+ *   Copyright (c) 2003-2021 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -778,7 +778,7 @@ class loadRequest
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose Pty Ltd" file="saveRequest.php">
- *   Copyright (c) 2003-2019 Aspose Pty Ltd
+ *   Copyright (c) 2003-2021 Aspose Pty Ltd
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
