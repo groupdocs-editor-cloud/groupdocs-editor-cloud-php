@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="LoadResult.php">
+ * <copyright company="Aspose Pty Ltd" file="ConsumptionResult.php">
  *   Copyright (c) 2003-2022 Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -32,11 +32,11 @@ use \ArrayAccess;
 use \GroupDocs\Editor\ObjectSerializer;
 
 /*
- * LoadResult
+ * ConsumptionResult
  *
- * @description Describes load result
+ * @description Metered license consumption information
  */
-class LoadResult implements ArrayAccess
+class ConsumptionResult implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -45,7 +45,7 @@ class LoadResult implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "LoadResult";
+    protected static $swaggerModelName = "ConsumptionResult";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -53,8 +53,8 @@ class LoadResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'htmlPath' => 'string',
-        'resourcesPath' => 'string'
+        'credit' => 'float',
+        'quantity' => 'float'
     ];
 
     /*
@@ -63,8 +63,8 @@ class LoadResult implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'htmlPath' => null,
-        'resourcesPath' => null
+        'credit' => 'decimal',
+        'quantity' => 'decimal'
     ];
 
     /*
@@ -94,8 +94,8 @@ class LoadResult implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'htmlPath' => 'HtmlPath',
-        'resourcesPath' => 'ResourcesPath'
+        'credit' => 'Credit',
+        'quantity' => 'Quantity'
     ];
 
     /*
@@ -104,8 +104,8 @@ class LoadResult implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'htmlPath' => 'setHtmlPath',
-        'resourcesPath' => 'setResourcesPath'
+        'credit' => 'setCredit',
+        'quantity' => 'setQuantity'
     ];
 
     /*
@@ -114,8 +114,8 @@ class LoadResult implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'htmlPath' => 'getHtmlPath',
-        'resourcesPath' => 'getResourcesPath'
+        'credit' => 'getCredit',
+        'quantity' => 'getQuantity'
     ];
 
     /*
@@ -178,8 +178,8 @@ class LoadResult implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['htmlPath'] = isset($data['htmlPath']) ? $data['htmlPath'] : null;
-        $this->container['resourcesPath'] = isset($data['resourcesPath']) ? $data['resourcesPath'] : null;
+        $this->container['credit'] = isset($data['credit']) ? $data['credit'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
     }
 
     /*
@@ -191,6 +191,12 @@ class LoadResult implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['credit'] === null) {
+            $invalidProperties[] = "'credit' can't be null";
+        }
+        if ($this->container['quantity'] === null) {
+            $invalidProperties[] = "'quantity' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -203,54 +209,60 @@ class LoadResult implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['credit'] === null) {
+            return false;
+        }
+        if ($this->container['quantity'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /*
-     * Gets htmlPath
+     * Gets credit
      *
-     * @return string
+     * @return float
      */
-    public function getHtmlPath()
+    public function getCredit()
     {
-        return $this->container['htmlPath'];
+        return $this->container['credit'];
     }
 
     /*
-     * Sets htmlPath
+     * Sets credit
      *
-     * @param string $htmlPath Path of the editable document
+     * @param float $credit Amount of used credits
      *
      * @return $this
      */
-    public function setHtmlPath($htmlPath)
+    public function setCredit($credit)
     {
-        $this->container['htmlPath'] = $htmlPath;
+        $this->container['credit'] = $credit;
 
         return $this;
     }
 
     /*
-     * Gets resourcesPath
+     * Gets quantity
      *
-     * @return string
+     * @return float
      */
-    public function getResourcesPath()
+    public function getQuantity()
     {
-        return $this->container['resourcesPath'];
+        return $this->container['quantity'];
     }
 
     /*
-     * Sets resourcesPath
+     * Sets quantity
      *
-     * @param string $resourcesPath Path of the document resources
+     * @param float $quantity Amount of MBs processed
      *
      * @return $this
      */
-    public function setResourcesPath($resourcesPath)
+    public function setQuantity($quantity)
     {
-        $this->container['resourcesPath'] = $resourcesPath;
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }
