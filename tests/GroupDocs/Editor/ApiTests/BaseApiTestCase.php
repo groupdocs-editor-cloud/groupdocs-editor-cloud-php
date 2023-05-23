@@ -2,7 +2,7 @@
 /*
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose" file="BaseApiTest.php">
-*   Copyright (c) 2003-2022 Aspose Pty Ltd
+*   Copyright (c) 2003-2023 Aspose Pty Ltd
 * </copyright>
 * <summary>
 *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +35,7 @@ use GroupDocs\Editor\StorageApi;
 use GroupDocs\Editor\FileApi;
 use GroupDocs\Editor\FolderApi;
 
-abstract class BaseApiTest extends \PHPUnit_Framework_TestCase
+class BaseApiTestCase extends \PHPUnit\Framework\TestCase
 {
     protected static $editorConfig;
 
@@ -52,7 +52,7 @@ abstract class BaseApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Cleanup after each test case
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         self::_deleteFolder(self::$outputPath);        
     }
@@ -67,7 +67,7 @@ abstract class BaseApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Setup before each test suite
      */
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         self::_initTests();
     }

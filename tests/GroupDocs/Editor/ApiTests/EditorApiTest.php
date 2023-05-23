@@ -2,7 +2,7 @@
 /**
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose Pty Ltd" file="EditorGetInfoApiTest.php">
-*   Copyright (c) 2003-2022 Aspose Pty Ltd
+*   Copyright (c) 2003-2023 Aspose Pty Ltd
 * </copyright>
 * <summary>
 *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,9 +30,9 @@ namespace GroupDocs\Editor\ApiTests;
 use GroupDocs\Editor\Model\Requests;
 use \GroupDocs\Editor\Model;
 
-require_once "BaseApiTest.php";
+require_once "BaseApiTestCase.php";
 
-class EditorApiTest extends BaseApiTest
+class EditorApiTest extends BaseApiTestCase
 {
     public function testOpenSaveDocx()
     {

@@ -2,7 +2,7 @@
 /**
 * --------------------------------------------------------------------------------------------------------------------
 * <copyright company="Aspose Pty Ltd" file="EditorGetInfoApiTest.php">
-*   Copyright (c) 2003-2022 Aspose Pty Ltd
+*   Copyright (c) 2003-2023 Aspose Pty Ltd
 * </copyright>
 * <summary>
 *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,14 +29,14 @@ namespace GroupDocs\Editor\ApiTests;
 
 use GroupDocs\Editor\Model\Requests;
 
-require_once "BaseApiTest.php";
+require_once "BaseApiTestCase.php";
 
-class EditorGetInfoApiTest extends BaseApiTest
+class EditorGetInfoApiTest extends BaseApiTestCase
 {
     public function testGetInfoReturnsFileNotFound()
     {
-        $this->setExpectedExceptionRegExp(
-            \GroupDocs\Editor\ApiException::class, "/Can't find file located at 'some-folder\/NotExist.docx'./");
+        $this->expectException(\GroupDocs\Editor\ApiException::class);
+        $this->expectExceptionMessage("Can't find file located at 'some-folder/NotExist.docx'.");        
 
         $testFile = Internal\TestFiles::getFileNotExist();
 
