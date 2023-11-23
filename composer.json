@@ -1,7 +1,7 @@
 {
     "description": "This repository contains GroupDocs.Editor Cloud SDK for PHP source code.",
     "name": "groupdocscloud/groupdocs-editor-cloud",
-    "version": "23.5",
+    "version": "23.11",
     "license": "MIT",
     "type": "library",
     "keywords": [
