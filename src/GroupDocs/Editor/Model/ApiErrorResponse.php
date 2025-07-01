@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="DiscUsage.php">
+ * <copyright company="Aspose Pty Ltd" file="ApiErrorResponse.php">
  *   Copyright (c) Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -32,11 +32,10 @@ use \ArrayAccess;
 use \GroupDocs\Editor\ObjectSerializer;
 
 /*
- * DiscUsage
+ * ApiErrorResponse
  *
- * @description Class for disc space information.
  */
-class DiscUsage implements ArrayAccess
+class ApiErrorResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -45,7 +44,7 @@ class DiscUsage implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "DiscUsage";
+    protected static $swaggerModelName = "ApiErrorResponse";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -53,8 +52,8 @@ class DiscUsage implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'usedSize' => 'int',
-        'totalSize' => 'int'
+        'requestId' => 'string',
+        'error' => '\GroupDocs\Editor\Model\ApiError'
     ];
 
     /*
@@ -63,8 +62,8 @@ class DiscUsage implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'usedSize' => 'int64',
-        'totalSize' => 'int64'
+        'requestId' => null,
+        'error' => null
     ];
 
     /*
@@ -94,8 +93,8 @@ class DiscUsage implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'usedSize' => 'UsedSize',
-        'totalSize' => 'TotalSize'
+        'requestId' => 'RequestId',
+        'error' => 'Error'
     ];
 
     /*
@@ -104,8 +103,8 @@ class DiscUsage implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'usedSize' => 'setUsedSize',
-        'totalSize' => 'setTotalSize'
+        'requestId' => 'setRequestId',
+        'error' => 'setError'
     ];
 
     /*
@@ -114,8 +113,8 @@ class DiscUsage implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'usedSize' => 'getUsedSize',
-        'totalSize' => 'getTotalSize'
+        'requestId' => 'getRequestId',
+        'error' => 'getError'
     ];
 
     /*
@@ -178,8 +177,8 @@ class DiscUsage implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['usedSize'] = isset($data['usedSize']) ? $data['usedSize'] : null;
-        $this->container['totalSize'] = isset($data['totalSize']) ? $data['totalSize'] : null;
+        $this->container['requestId'] = isset($data['requestId']) ? $data['requestId'] : null;
+        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
     }
 
     /*
@@ -191,12 +190,6 @@ class DiscUsage implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['usedSize'] === null) {
-            $invalidProperties[] = "'usedSize' can't be null";
-        }
-        if ($this->container['totalSize'] === null) {
-            $invalidProperties[] = "'totalSize' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,60 +202,54 @@ class DiscUsage implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['usedSize'] === null) {
-            return false;
-        }
-        if ($this->container['totalSize'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /*
-     * Gets usedSize
+     * Gets requestId
      *
-     * @return int
+     * @return string
      */
-    public function getUsedSize()
+    public function getRequestId()
     {
-        return $this->container['usedSize'];
+        return $this->container['requestId'];
     }
 
     /*
-     * Sets usedSize
+     * Sets requestId
      *
-     * @param int $usedSize Application used disc space.
+     * @param string $requestId requestId
      *
      * @return $this
      */
-    public function setUsedSize($usedSize)
+    public function setRequestId($requestId)
     {
-        $this->container['usedSize'] = $usedSize;
+        $this->container['requestId'] = $requestId;
 
         return $this;
     }
 
     /*
-     * Gets totalSize
+     * Gets error
      *
-     * @return int
+     * @return \GroupDocs\Editor\Model\ApiError
      */
-    public function getTotalSize()
+    public function getError()
     {
-        return $this->container['totalSize'];
+        return $this->container['error'];
     }
 
     /*
-     * Sets totalSize
+     * Sets error
      *
-     * @param int $totalSize Total disc space.
+     * @param \GroupDocs\Editor\Model\ApiError $error error
      *
      * @return $this
      */
-    public function setTotalSize($totalSize)
+    public function setError($error)
     {
-        $this->container['totalSize'] = $totalSize;
+        $this->container['error'] = $error;
 
         return $this;
     }

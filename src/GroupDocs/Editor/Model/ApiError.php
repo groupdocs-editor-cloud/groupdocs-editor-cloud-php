@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose Pty Ltd" file="DiscUsage.php">
+ * <copyright company="Aspose Pty Ltd" file="ApiError.php">
  *   Copyright (c) Aspose Pty Ltd
  * </copyright>
  * <summary>
@@ -32,11 +32,10 @@ use \ArrayAccess;
 use \GroupDocs\Editor\ObjectSerializer;
 
 /*
- * DiscUsage
+ * ApiError
  *
- * @description Class for disc space information.
  */
-class DiscUsage implements ArrayAccess
+class ApiError implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -45,7 +44,7 @@ class DiscUsage implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "DiscUsage";
+    protected static $swaggerModelName = "ApiError";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -53,8 +52,11 @@ class DiscUsage implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'usedSize' => 'int',
-        'totalSize' => 'int'
+        'code' => 'string',
+        'message' => 'string',
+        'description' => 'string',
+        'dateTime' => '\DateTime',
+        'innerError' => '\GroupDocs\Editor\Model\ApiError'
     ];
 
     /*
@@ -63,8 +65,11 @@ class DiscUsage implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'usedSize' => 'int64',
-        'totalSize' => 'int64'
+        'code' => null,
+        'message' => null,
+        'description' => null,
+        'dateTime' => 'date-time',
+        'innerError' => null
     ];
 
     /*
@@ -94,8 +99,11 @@ class DiscUsage implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'usedSize' => 'UsedSize',
-        'totalSize' => 'TotalSize'
+        'code' => 'Code',
+        'message' => 'Message',
+        'description' => 'Description',
+        'dateTime' => 'DateTime',
+        'innerError' => 'InnerError'
     ];
 
     /*
@@ -104,8 +112,11 @@ class DiscUsage implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'usedSize' => 'setUsedSize',
-        'totalSize' => 'setTotalSize'
+        'code' => 'setCode',
+        'message' => 'setMessage',
+        'description' => 'setDescription',
+        'dateTime' => 'setDateTime',
+        'innerError' => 'setInnerError'
     ];
 
     /*
@@ -114,8 +125,11 @@ class DiscUsage implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'usedSize' => 'getUsedSize',
-        'totalSize' => 'getTotalSize'
+        'code' => 'getCode',
+        'message' => 'getMessage',
+        'description' => 'getDescription',
+        'dateTime' => 'getDateTime',
+        'innerError' => 'getInnerError'
     ];
 
     /*
@@ -178,8 +192,11 @@ class DiscUsage implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['usedSize'] = isset($data['usedSize']) ? $data['usedSize'] : null;
-        $this->container['totalSize'] = isset($data['totalSize']) ? $data['totalSize'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['dateTime'] = isset($data['dateTime']) ? $data['dateTime'] : null;
+        $this->container['innerError'] = isset($data['innerError']) ? $data['innerError'] : null;
     }
 
     /*
@@ -191,12 +208,6 @@ class DiscUsage implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['usedSize'] === null) {
-            $invalidProperties[] = "'usedSize' can't be null";
-        }
-        if ($this->container['totalSize'] === null) {
-            $invalidProperties[] = "'totalSize' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,60 +220,126 @@ class DiscUsage implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['usedSize'] === null) {
-            return false;
-        }
-        if ($this->container['totalSize'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /*
-     * Gets usedSize
+     * Gets code
      *
-     * @return int
+     * @return string
      */
-    public function getUsedSize()
+    public function getCode()
     {
-        return $this->container['usedSize'];
+        return $this->container['code'];
     }
 
     /*
-     * Sets usedSize
+     * Sets code
      *
-     * @param int $usedSize Application used disc space.
+     * @param string $code code
      *
      * @return $this
      */
-    public function setUsedSize($usedSize)
+    public function setCode($code)
     {
-        $this->container['usedSize'] = $usedSize;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /*
-     * Gets totalSize
+     * Gets message
      *
-     * @return int
+     * @return string
      */
-    public function getTotalSize()
+    public function getMessage()
     {
-        return $this->container['totalSize'];
+        return $this->container['message'];
     }
 
     /*
-     * Sets totalSize
+     * Sets message
      *
-     * @param int $totalSize Total disc space.
+     * @param string $message message
      *
      * @return $this
      */
-    public function setTotalSize($totalSize)
+    public function setMessage($message)
     {
-        $this->container['totalSize'] = $totalSize;
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /*
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /*
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /*
+     * Gets dateTime
+     *
+     * @return \DateTime
+     */
+    public function getDateTime()
+    {
+        return $this->container['dateTime'];
+    }
+
+    /*
+     * Sets dateTime
+     *
+     * @param \DateTime $dateTime dateTime
+     *
+     * @return $this
+     */
+    public function setDateTime($dateTime)
+    {
+        $this->container['dateTime'] = $dateTime;
+
+        return $this;
+    }
+
+    /*
+     * Gets innerError
+     *
+     * @return \GroupDocs\Editor\Model\ApiError
+     */
+    public function getInnerError()
+    {
+        return $this->container['innerError'];
+    }
+
+    /*
+     * Sets innerError
+     *
+     * @param \GroupDocs\Editor\Model\ApiError $innerError innerError
+     *
+     * @return $this
+     */
+    public function setInnerError($innerError)
+    {
+        $this->container['innerError'] = $innerError;
 
         return $this;
     }
